@@ -26,6 +26,7 @@ const {products} = useData()
     commands,
   })
 
+
   return (
     <div className="product-listing">
       {!browserSupportsSpeechRecognition && <span>Browser doesn't support speech recognition.</span>}

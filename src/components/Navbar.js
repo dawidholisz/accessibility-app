@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react'
 import SpeechRecognition, { useSpeechRecognition, } from 'react-speech-recognition'
 import { Link, useHistory } from 'react-router-dom'
+import { useContrast } from 'contexts/ContastContext'
 
 const Navbar = () => {
-  const startListening = () => SpeechRecognition.startListening({ continuous: true })
+  const {toggleContrastMode} = useContrast()
+
+  const startListening = () => SpeechRecognition.startListening({ continuous: true, language: "pl-PL" })
   const stopListening = () => SpeechRecognition.stopListening()
 
   const history = useHistory()
@@ -34,6 +37,7 @@ const Navbar = () => {
     <nav className="navbar">
       <h1 className="navbar__app-name">A11y App</h1>
       <Link className="navbar__link" to="/">Home</Link>
+      <button className="contrast-btn" onClick={toggleContrastMode}>Switch mode</button>
       {listening && <div className="blink listening-indicator"/>}
     </nav>
       {transcript && <div className="transcript">{transcript}</div>}

@@ -1,5 +1,4 @@
 body {
-    background-color: #737373;
     padding: 0;
     margin: 0;
 }
@@ -110,4 +109,30 @@ body {
 .product-detail-page img{
     max-width: 100%;
     object-fit: contain;
+}
+.app-container{
+    background-color: #737373;
+}
+
+.app-container.-high {
+    background-color: #EEE;
+}
+
+
+.contrast-btn{
+    border: 1px solid red;
+    background-color: orange;
+    color: red;
+    font-size:16px;
+    margin-left: 8px;
+    border-radius: 4px;
+}
+
+.-high .navbar .navbar__app-name {
+    color: #FFF;
+}
+.-high .contrast-btn{
+    border: none;
+    background-color: #FFF;
+    color: #000;
 }

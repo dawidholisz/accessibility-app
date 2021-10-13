@@ -6,16 +6,22 @@ import HomePage from 'pages/HomePage'
 import { DataProvider } from 'contexts/DataContext'
 
 import Navbar from 'components/Navbar'
+import { ContrastProvider } from 'contexts/ContastContext'
+import Layout from 'components/Layout'
 
 const App = () => (
   <div className="App">
     <Router>
       <DataProvider>
-        <Navbar/>
-        <Switch>
-          <Route path="/details/:id" component={ProductDetailPage}/>
-          <Route path="/" component={HomePage}/>
-        </Switch>
+        <ContrastProvider>
+          <Layout>
+            <Navbar/>
+            <Switch>
+              <Route path="/details/:id" component={ProductDetailPage}/>
+              <Route path="/" component={HomePage}/>
+            </Switch>
+          </Layout>
+        </ContrastProvider>
       </DataProvider>
     </Router>
   </div>
