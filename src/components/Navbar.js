@@ -6,7 +6,7 @@ import { useContrast } from 'contexts/ContastContext'
 const Navbar = () => {
   const {toggleContrastMode} = useContrast()
 
-  const startListening = () => SpeechRecognition.startListening({ continuous: true, language: "pl-PL" })
+  const startListening = () => SpeechRecognition.startListening({ continuous: true})
   const stopListening = () => SpeechRecognition.stopListening()
 
   const history = useHistory()
@@ -19,6 +19,11 @@ const Navbar = () => {
     {
       command: ['Go home'],
       callback: () => history.push('/'),
+    },
+    {
+      command: ['run ivan run'],
+      isFuzzyMatch: true,
+      callback: () => alert('Sam sie posuń')
     },
   ]
   const { transcript, browserSupportsSpeechRecognition, listening, isMicrophoneAvailable } = useSpeechRecognition({

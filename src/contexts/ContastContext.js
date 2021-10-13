@@ -4,7 +4,7 @@ import {useToggle} from 'react-use'
 const ContrastContext = React.createContext({ products: [] })
 
 export const ContrastProvider = ({ children }) => {
-   const [isHighContrastMode,toggleContrastMode] = useToggle(false)
+   const [isHighContrastMode,toggleContrastMode] = useToggle(true)
   return (
     <ContrastContext.Provider value={{isHighContrastMode,toggleContrastMode}}>
       {children}

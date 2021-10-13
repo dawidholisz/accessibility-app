@@ -118,7 +118,6 @@ body {
     background-color: #EEE;
 }
 
-
 .contrast-btn{
     border: 1px solid red;
     background-color: orange;
@@ -135,4 +134,7 @@ body {
     border: none;
     background-color: #FFF;
     color: #000;
+}
+.-high .product-listing .product-listing-item .product-listing-item__more-details {
+    background-color: #000;
 }
