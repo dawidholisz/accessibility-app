@@ -9,7 +9,7 @@ const ProductDetailPage = () => {
   const { name,description, imgUrl } = getProductDetailsById(id)
   return (
     <div className="product-detail-page">
-      <img src={imgUrl}/>
+      <img src={imgUrl} alt="main product"/>
       <h1>{name}</h1>
       <p>{description}</p>
     </div>

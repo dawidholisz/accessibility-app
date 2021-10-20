@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const ProductListingItem = ({ product: { name, description, imgUrl, id } }) => (
   <div className="product-listing-item">
-    <img src={imgUrl} className="product-listing-item__image"/>
+    <img src={imgUrl} alt={name} className="product-listing-item__image"/>
     <div className="product-listing-item__details">
       <h2 className="product-listing-item__product-name">{name}</h2>
       <p className="product-listing-item__product-description">{description}</p>
