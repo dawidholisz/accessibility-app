@@ -20,6 +20,7 @@ const Navbar = () => {
       command: ['Go home'],
       callback: () => history.push('/'),
     }
+    
   ]
   const { transcript, browserSupportsSpeechRecognition, listening, isMicrophoneAvailable } = useSpeechRecognition({
     commands,
