@@ -19,12 +19,8 @@ const Navbar = () => {
     {
       command: ['Go home'],
       callback: () => history.push('/'),
-    },
-    {
-      command: ['run ivan run'],
-      isFuzzyMatch: true,
-      callback: () => alert('Sam sie posuń')
-    },
+    }
+    
   ]
   const { transcript, browserSupportsSpeechRecognition, listening, isMicrophoneAvailable } = useSpeechRecognition({
     commands,
@@ -40,9 +36,9 @@ const Navbar = () => {
   return (
     <>
     <nav className="navbar">
-      <h1 className="navbar__app-name">A11y App</h1>
-      <Link className="navbar__link" to="/">Home</Link>
-      <button className="contrast-btn" onClick={toggleContrastMode}>Switch mode</button>
+      <h1 className="navbar__app-name" aria-label="home page">A11y App</h1>
+      <Link role="link" className="navbar__link" to="/" aria-label="Start page">Home</Link>
+      <button role="switch" className="contrast-btn" onClick={toggleContrastMode}>Switch mode</button>
       {listening && <div className="blink listening-indicator"/>}
     </nav>
       {transcript && <div className="transcript">{transcript}</div>}
